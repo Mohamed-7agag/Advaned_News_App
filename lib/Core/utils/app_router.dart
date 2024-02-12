@@ -19,7 +19,7 @@ class AppRouter {
   static String viewRoute = '/homeView';
   static String detailsRoute = '/detailsView';
   //! Generate Routes
-  static Route<dynamic>? generateRoute(RouteSettings settings) {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (context) => const SplashView());

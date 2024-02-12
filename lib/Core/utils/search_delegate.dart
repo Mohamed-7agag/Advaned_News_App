@@ -2,7 +2,7 @@ import 'package:advanced_news_app/Core/utils/styles.dart';
 import 'package:advanced_news_app/Features/parameters/data/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+import 'app_router.dart';
 
 class SearchCountry extends SearchDelegate {
   @override
@@ -64,11 +64,11 @@ class SearchCountry extends SearchDelegate {
                     return InkWell(
                       onTap: () {
                         countryName = countrySymbols[index];
-                        GoRouter.of(context)
-                            .push('/categoryView', extra: countryName);
+                        Navigator.pushNamed(context, AppRouter.categoryRoute);
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 8,right: 15,left: 15),
+                        padding:
+                            const EdgeInsets.only(top: 8, right: 15, left: 15),
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(8),
