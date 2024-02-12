@@ -1,7 +1,6 @@
+import 'package:advanced_news_app/Core/utils/app_router.dart';
+import 'package:advanced_news_app/Core/utils/constant.dart';
 import 'package:advanced_news_app/Features/parameters/data/local_data.dart';
-
-import 'package:go_router/go_router.dart';
-
 import '../../../../Core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +16,17 @@ class ParameterListViewItem extends StatelessWidget {
       onTap: () {
         if (parameter == countries) {
           countryName = countrySymbols[index];
-          GoRouter.of(context).push('/categoryView', extra: countryName);
+          Navigator.pushNamed(context, AppRouter.categoryRoute);
         } else {
           categoryName = categories[index];
-          GoRouter.of(context).push('/homeView');
+          Navigator.pushNamed(context, AppRouter.viewRoute);
         }
       },
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: const Color.fromARGB(255, 245, 245, 245)),
+          borderRadius: BorderRadius.circular(8),
+          color: lighterGrey,
+        ),
         child: ListTile(
           title: Text(
             parameter[index],

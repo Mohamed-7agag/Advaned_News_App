@@ -1,6 +1,6 @@
+import 'package:advanced_news_app/Core/utils/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -14,7 +14,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      GoRouter.of(context).pushReplacement('/countryView');
+      Navigator.pushReplacementNamed(context, AppRouter.countryRoute);
     });
   }
 

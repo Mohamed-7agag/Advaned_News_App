@@ -18,8 +18,9 @@ class NewsApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp.router(
-          routerConfig: AppRouter.router,
+        return MaterialApp(
+          onGenerateRoute: AppRouter.generateRoute,
+          initialRoute: AppRouter.splashRoute,
           debugShowCheckedModeBanner: false,
           builder: (context, child) {
             return MediaQuery(

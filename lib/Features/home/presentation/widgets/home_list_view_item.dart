@@ -1,5 +1,6 @@
+import 'package:advanced_news_app/Core/utils/app_router.dart';
+
 import '../../data/models/news_model/news_model.dart';
-import '../views/news_details_view.dart';
 import 'image_section.dart';
 import 'text_section.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +14,7 @@ class HomeListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => NewsDetailsView(
-              newsModel: newsModel,
-            ),
-          ),
-        );
+        Navigator.pushNamed(context, AppRouter.detailsRoute,arguments: newsModel);
       },
       child: Container(
         width: double.infinity,

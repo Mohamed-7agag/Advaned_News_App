@@ -1,5 +1,4 @@
 import 'package:advanced_news_app/Features/parameters/data/local_data.dart';
-
 import '../view_model/news_cubit/news_cubit.dart';
 import '../widgets/home_view_body.dart';
 import 'package:flutter/material.dart';
